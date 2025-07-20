@@ -1,0 +1,39 @@
+import { useState } from 'react';
+import { TestDataPage } from './components/TestDataPage';
+import { OpportunityModal } from './components/OpportunityModal';
+import { ProcurementRelease, SearchFilters } from './types/api';
+import { ApiDemoPage } from './components/ApiDemoPage';
+
+interface TrackedOpportunity {
+  ocid: string;
+  // other fields...
+}
+
+function App() {
+  const [currentPage, setCurrentPage] = useState<'main' | 'test' | 'apiDemo'>('main');
+  const [releases, setReleases] = useState<ProcurementRelease[]>([]);
+  const [allReleases, setAllReleases] = useState<ProcurementRelease[]>([]);
+  const [filters, setFilters] = useState<SearchFilters & { keyword?: string; institution?: string; province?: string; modality?: string; showTracked?: boolean }>({
+    // initial filter values...
+  });
+
+  const totalResults = releases.length; // or however you calculate this
+  const totalPages = Math.ceil(totalResults / 20);
+
+  if (currentPage === 'test') {
+    return <TestDataPage onNavigate={setCurrentPage} />;
+  }
+
+  if (currentPage === 'apiDemo') {
+    return <ApiDemoPage onBack={() => setCurrentPage('test')} />;
+  }
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      {/* Main content */}
+    </div>
+  );
+}
+
+export default App;

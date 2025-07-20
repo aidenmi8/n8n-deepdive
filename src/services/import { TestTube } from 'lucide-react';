@@ -1,0 +1,45 @@
+import { TestTube } from 'lucide-react';
+import { DatabaseValidator } from './DatabaseValidator';
+import { DataIngestionManager } from './DataIngestionManager';
+
+interface TestDataPageProps {
+  onNavigate: (page: 'main' | 'test' | 'apiDemo') => void;
+}
+
+export const TestDataPage: React.FC<TestDataPageProps> = ({ onNavigate }) => {
+  return (
+    <div className="min-h-screen bg-gray-100 p-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-3xl font-bold text-gray-800 flex items-center">
+            <TestTube className="mr-3 h-8 w-8 text-blue-600" />
+            Data Management & Testing
+          </h1>
+          <button
+            onClick={() => onNavigate('main')}
+            className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            &larr; Back to Main App
+          </button>
+        </div>
+
+        <div className="space-y-8">
+          <div className="bg-white p-6 rounded-lg shadow">
+            <h2 className="text-xl font-semibold text-gray-700 mb-4">Live API Demo</h2>
+            <p className="text-gray-600 mb-4">
+              This page demonstrates how data is fetched in real-time from the government's public API.
+            </p>
+            <button
+              onClick={() => onNavigate('apiDemo')}
+              className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition-colors"
+            >
+              Go to API Demo Page &rarr;
+            </button>
+          </div>
+          <DataIngestionManager />
+          <DatabaseValidator />
+        </div>
+      </div>
+    </div>
+  );
+};
