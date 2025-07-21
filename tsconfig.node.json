@@ -1,5 +1,5 @@
 {
-   "compilerOptions": {
+  "compilerOptions": {
     "target": "es2020",
     "module": "esnext",
     "lib": ["es2020"],
@@ -9,6 +9,7 @@
     "strict": true,
     "skipLibCheck": true,
     "types": ["@vercel/node", "node"]
+  },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
