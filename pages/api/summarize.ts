@@ -1,5 +1,3 @@
-########### we must likeli have to delete this file ######
-
 
 import { VercelRequest, VercelResponse } from '@vercel/node';
 import OpenAI from 'openai';
