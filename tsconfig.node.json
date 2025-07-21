@@ -19,4 +19,6 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["vite.config.ts"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/**/*.ts"]
+
 }
