@@ -1,15 +1,7 @@
 {
   "functions": {
-    "api/**/*.ts": {
-      "runtime": "nodejs18.x"
-    },
     "api/**/*.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
-  "build": {
-    "env": {
-      "OPENAI_API_KEY": "@openai-api-key"
+      "runtime": "vercel-node@3.1.7"
     }
   }
 }
