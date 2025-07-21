@@ -1,12 +1,7 @@
 {
   "functions": {
-    "api/*.ts": {
+    "api/**/*.js": {
       "runtime": "nodejs18.x"
-    }
-  },
-  "build": {
-    "env": {
-      "OPENAI_API_KEY": "@openai-api-key"
     }
   }
 }
