@@ -18,7 +18,9 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["vite.config.ts"]
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/**/*.ts"]
+  "include": [
+    "vite.config.ts",
+  "next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/**/*.ts"
+  ]
 
 }
